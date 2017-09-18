@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Realtime Chat VueJS</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div id="app"></div>
+	<script>
+		function genericAjax(type, url, headers, callback) {
+			$.ajax({
+				type: type,
+				crossDomain: true,
+				url: url,
+				headers: headers,
+				success: (data) => {
+					callback(data);
+				},
+				error: (data) => {
+					console.error(data)
+					console.error('OCORREU UM ERRO EM UMA REQUISIÇÃO AJAX');
+					callback(data);
+				}
+			});
+		}
+	</script>
+</body>
+
+</html>
